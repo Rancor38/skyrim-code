@@ -1,0 +1,56 @@
+# Build artifacts
+SkyrimAutomation/
+build/
+out/
+*.dll
+*.pdb
+*.lib
+*.obj
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Visual Studio / CMake
+.vs/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.vcxproj*
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# IDE
+*.swp
+*.swo
+.vscode/settings.json
+
+# Logs
+*.log
+
+# Temporary test/diagnostic files
+test_*.py
+DIAGNOSE_*.bat
+FIX_*.bat
+SETUP_*.bat
+RUN_ME.bat
+CREATE_*.bat
+*_INSTRUCTIONS.md
+PROPER_MOD_README.md
+
+# Temporary data directories
+Creations/
+data/
+Mods/

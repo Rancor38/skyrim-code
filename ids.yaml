@@ -1,0 +1,137 @@
+# Skyrim Item/Location/Spell IDs
+# =============================
+# Use these in your keypress.yaml commands like: ["currency.gold", 10000]
+
+# Currency & Valuable Items
+currency:
+  gold: "0000000f"
+  lockpick: "0000000a"
+  dragon_bone: "0003ad5b"
+  dragon_scale: "0003ad5a"
+  diamond: "00068522"
+  emerald: "00068521"
+  ruby: "00068523"
+  sapphire: "00068524"
+
+# Weapons - One-Handed
+one_handed_swords:
+  iron_sword: "00012eb7"
+  steel_sword: "00013989"
+  orcish_sword: "00013990"
+  dwarven_sword: "00013991"
+  elven_sword: "00013992"
+  glass_sword: "00013993"
+  ebony_sword: "00013994"
+  daedric_sword: "00013995"
+
+# Weapons - Bows
+bows:
+  hunting_bow: "00013985"
+  long_bow: "00013986"
+  imperial_bow: "00013987"
+  orcish_bow: "00013988"
+  dwarven_bow: "00013989"
+  elven_bow: "0001398a"
+  glass_bow: "0001398b"
+  ebony_bow: "0001398c"
+  daedric_bow: "0001398d"
+
+# Armor Sets - Light Armor
+light_armor:
+  leather_armor: "0003619e"
+  studded_leather: "0003619f"
+  elven_armor: "000361a0"
+  scaled_armor: "000361a1"
+  glass_armor: "000361a2"
+  dragonscale_armor: "000361a3"
+
+# Armor Sets - Heavy Armor
+heavy_armor:
+  iron_armor: "00012e49"
+  steel_armor: "00012e4a"
+  steel_plate: "00012e4b"
+  dwarven_armor: "00012e4c"
+  orcish_armor: "00012e4d"
+  ebony_armor: "00012e4e"
+  daedric_armor: "00012e4f"
+  dragonplate_armor: "00012e50"
+
+# Potions - Health
+health_potions:
+  minor_healing: "0003ad56"
+  healing: "0003ad57"
+  greater_healing: "0003ad58"
+  ultimate_healing: "0003ad59"
+
+# Potions - Magicka
+magicka_potions:
+  minor_magicka: "0003ad5c"
+  magicka: "0003ad5d"
+  greater_magicka: "0003ad5e"
+  ultimate_magicka: "0003ad5f"
+
+# Potions - Stamina
+stamina_potions:
+  minor_stamina: "0003ad60"
+  stamina: "0003ad61"
+  greater_stamina: "0003ad62"
+  ultimate_stamina: "0003ad63"
+
+# Spell Tomes - Destruction
+destruction_spells:
+  flames: "000a26e0"
+  frostbite: "000a26e1"
+  sparks: "000a26e2"
+  firebolt: "000a26e3"
+  ice_spike: "000a26e4"
+  lightning_bolt: "000a26e5"
+
+# Spell Tomes - Restoration
+restoration_spells:
+  heal: "000a26d0"
+  fast_healing: "000a26d1"
+  close_wounds: "000a26d2"
+  heal_other: "000a26d3"
+
+# Major Cities (for teleportation)
+major_cities:
+  whiterun: "00018a5a"
+  solitude: "00037edf"
+  riften: "00018a58"
+  windhelm: "00018a59"
+  markarth: "00018a5b"
+
+# Houses (player homes)
+player_homes:
+  breezehome: "00018a5c"
+  hjerim: "00018a5d"
+  honeyside: "00018a5e"
+  proudspire_manor: "00018a5f"
+  vlindrel_hall: "00018a60"
+
+# Food Items
+food:
+  bread: "00064b33"
+  cheese: "00064b34"
+  apple: "00064b35"
+  sweet_roll: "00064b36"
+  ale: "00034c5e"
+  wine: "00034c5f"
+
+# Crafting Materials
+crafting_materials:
+  iron_ingot: "0005ad93"
+  steel_ingot: "0005ad94"
+  silver_ingot: "0005ad95"
+  gold_ingot: "0005ad96"
+  leather: "000db5d2"
+  leather_strips: "000800e4"
+
+# Soul Gems
+soul_gems:
+  petty_soul_gem: "0002e4e4"
+  lesser_soul_gem: "0002e4e5"
+  common_soul_gem: "0002e4e6"
+  greater_soul_gem: "0002e4e7"
+  grand_soul_gem: "0002e4e8"
+  black_soul_gem: "0002e4e9"

@@ -1,0 +1,182 @@
+# Skyrim HybridCommander Configuration
+# ====================================
+# Configure your in-game presets here - the automation script will create
+# HybridCommander presets that you can assign to hotkeys or powers in MCM!
+
+keybinds:
+  # ================================================================
+  # BASIC UTILITIES (Numpad 1-4)
+  # ================================================================
+  Numpad1:
+    name: "give_money"
+    description: "Give me 10,000 gold!"
+    commands:
+      - function: "give_item"
+        args: ["currency.gold", 10000]
+  
+  Numpad2:
+    name: "god_mode_toggle"
+    description: "Toggle God Mode"
+    commands:
+      - function: "execute_command"
+        args: ["player_commands.god_mode"]
+  
+  Numpad3:
+    name: "restore_vitals"
+    description: "Restore Health/Magicka/Stamina"
+    commands:
+      - function: "set_player_stat"
+        args: ["health", 100]
+      - function: "set_player_stat"
+        args: ["magicka", 100]
+      - function: "set_player_stat"
+        args: ["stamina", 100]
+
+  Numpad4:
+    name: "no_clip_toggle"
+    description: "Toggle No-Clip Mode"
+    commands:
+      - function: "execute_command"
+        args: ["player_commands.no_clip"]
+
+  # ================================================================
+  # PLAYER ENHANCEMENT (Numpad 5-8)
+  # ================================================================
+  Numpad5:
+    name: "become_overpowered"
+    description: "Max stats + lots of gold"
+    commands:
+      - function: "set_player_stat"
+        args: ["health", 999]
+      - function: "set_player_stat"
+        args: ["magicka", 999]
+      - function: "set_player_stat"
+        args: ["stamina", 999]
+      - function: "give_item"
+        args: ["currency.gold", 100000]
+
+  Numpad6:
+    name: "increase_carry_weight"
+    description: "Set carry weight to 5000"
+    commands:
+      - function: "set_player_stat"
+        args: ["carryweight", 5000]
+
+  Numpad7:
+    name: "speed_boost"
+    description: "Increase movement speed"
+    commands:
+      - function: "set_player_stat"
+        args: ["speedmult", 150]
+
+  Numpad8:
+    name: "max_combat_skills"
+    description: "Max all combat skills to 100"
+    commands:
+      - function: "set_player_stat"
+        args: ["onehanded", 100]
+      - function: "set_player_stat"
+        args: ["twohanded", 100]
+      - function: "set_player_stat"
+        args: ["archery", 100]
+      - function: "set_player_stat"
+        args: ["block", 100]
+
+  # ================================================================
+  # MAGIC & SKILLS (Numpad 9, 0, Period, Plus)
+  # ================================================================
+  Numpad9:
+    name: "max_magic_skills"
+    description: "Max all magic schools to 100"
+    commands:
+      - function: "set_player_stat"
+        args: ["destruction", 100]
+      - function: "set_player_stat"
+        args: ["restoration", 100]
+      - function: "set_player_stat"
+        args: ["illusion", 100]
+      - function: "set_player_stat"
+        args: ["conjuration", 100]
+      - function: "set_player_stat"
+        args: ["alteration", 100]
+
+  Numpad0:
+    name: "max_stealth_skills"
+    description: "Max stealth and thief skills"
+    commands:
+      - function: "set_player_stat"
+        args: ["sneak", 100]
+      - function: "set_player_stat"
+        args: ["pickpocket", 100]
+      - function: "set_player_stat"
+        args: ["lockpicking", 100]
+      - function: "set_player_stat"
+        args: ["speech", 100]
+
+  NumpadPeriod:
+    name: "max_crafting_skills"
+    description: "Max smithing, alchemy, enchanting"
+    commands:
+      - function: "set_player_stat"
+        args: ["smithing", 100]
+      - function: "set_player_stat"
+        args: ["alchemy", 100]
+      - function: "set_player_stat"
+        args: ["enchanting", 100]
+
+  NumpadPlus:
+    name: "unlock_all_nearby"
+    description: "Unlock all nearby containers/doors"
+    commands:
+      - function: "execute_command"
+        args: ["player_commands.unlock_all"]
+
+# Add more presets using other keys (you can add Ctrl+Numpad1, Shift+Numpad2, etc. in HybridCommander)
+# Available for future expansion:
+# Ctrl+Numpad1, Ctrl+Numpad2, Shift+Numpad1, NumpadMinus, NumpadMultiply, etc. - assign these in HybridCommander MCM
+
+# ================================================================
+# FUNCTION DEFINITIONS
+# ================================================================
+# These define how functions are converted to console commands
+function_definitions:
+  give_item:
+    template: "player.additem {item_id} {quantity}"
+    description: "Give player an item"
+  
+  set_player_stat:
+    template: "player.setav {stat} {value}"
+    description: "Set player stat to exact value"
+  
+  modify_player_stat:
+    template: "player.modav {stat} {value}"
+    description: "Modify player stat by amount"
+  
+  execute_command:
+    template: "{command}"
+    description: "Execute raw console command"
+  
+  teleport_to:
+    template: "coc {location_id}"
+    description: "Teleport to location"
+  
+  give_spell:
+    template: "player.addspell {spell_id}"
+    description: "Add spell to player"
+  
+  complete_quest:
+    template: "completequest {quest_id}"
+    description: "Complete a quest"
+  
+  set_weather:
+    template: "fw {weather_id}"
+    description: "Force weather change"
+
+# ================================================================
+# NOTES
+# ================================================================
+# • Run the automation script to generate HybridCommander presets
+# • Assign presets to hotkeys/powers in HybridCommander MCM
+# • Commands execute in background without opening console
+# • You can have up to 50 different presets total
+# • Each preset can have up to 10 commands

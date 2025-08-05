@@ -1,0 +1,99 @@
+# Skyrim Console Commands Reference
+# =================================
+# Common console commands you can use in your automation
+
+# Player Commands
+player_commands:
+  god_mode: "tgm"
+  no_clip: "tcl"
+  immortal_mode: "tim"
+  kill_all: "killall"
+  unlock_all: "unlock"
+  advance_level: "player.advlevel"
+  
+# Player Stats (use with player.setav or player.modav)
+player_stats:
+  health: "health"
+  magicka: "magicka"  
+  stamina: "stamina"
+  carry_weight: "carryweight"
+  speed_mult: "speedmult"
+  
+# Skills (use with player.setav)
+skills:
+  onehanded: "onehanded"
+  twohanded: "twohanded"
+  archery: "archery"
+  block: "block"
+  smithing: "smithing"
+  heavyarmor: "heavyarmor"
+  lightarmor: "lightarmor"
+  pickpocket: "pickpocket"
+  lockpicking: "lockpicking"
+  sneak: "sneak"
+  alchemy: "alchemy"
+  speech: "speech"
+  alteration: "alteration"
+  conjuration: "conjuration"
+  destruction: "destruction"
+  illusion: "illusion"
+  restoration: "restoration"
+  enchanting: "enchanting"
+
+# Weather & Time
+environment:
+  clear_weather: "fw 81a"
+  set_time_scale: "set timescale to"  # follow with number
+  set_time: "set gamehour to"  # follow with 0-23
+  
+# Quest Commands  
+quests:
+  complete_quest: "completequest"  # follow with quest ID
+  start_quest: "startquest"  # follow with quest ID
+  set_stage: "setstage"  # follow with quest ID and stage
+
+# Common Functions for Building Commands
+common_functions:
+  give_item:
+    template: "player.additem {item_id} {quantity}"
+    description: "Give player an item"
+    
+  set_player_stat:
+    template: "player.setav {stat} {value}"
+    description: "Set player stat to value"
+    
+  modify_player_stat:
+    template: "player.modav {stat} {value}"
+    description: "Modify player stat by value"
+    
+  teleport_to:
+    template: "coc {location_id}"
+    description: "Teleport to location"
+    
+  execute_command:
+    template: "{command}"
+    description: "Execute raw console command"
+    
+  give_spell:
+    template: "player.addspell {spell_id}"
+    description: "Add spell to player"
+
+# Example Complex Commands
+examples:
+  become_overpowered:
+    - "player.setav health 999"
+    - "player.setav magicka 999"
+    - "player.setav stamina 999"
+    - "player.additem 0000000f 100000"
+    
+  max_all_skills:
+    - "player.setav onehanded 100"
+    - "player.setav twohanded 100"
+    - "player.setav archery 100"
+    - "player.setav destruction 100"
+    - "player.setav restoration 100"
+    
+  ultimate_gear:
+    - "player.additem 00013995 1"  # Daedric Sword
+    - "player.additem 0001398d 1"  # Daedric Bow
+    - "player.additem 00012e4f 1"  # Daedric Armor
