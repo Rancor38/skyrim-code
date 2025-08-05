@@ -135,3 +135,10 @@ soul_gems:
   greater_soul_gem: "0002e4e7"
   grand_soul_gem: "0002e4e8"
   black_soul_gem: "0002e4e9"
+
+# Animals & Creatures
+animals:
+  # Bears (for spawning with player.placeatme command)
+  standard_bear: "00023a8a"    # Level 12, 260 Health
+  cave_bear: "00023a8b"        # Level 16, 450 Health, Common Soul
+  snow_bear: "00023a8c"        # Level 20, 550 Health, Resist Frost 50pts

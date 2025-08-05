@@ -8,11 +8,11 @@ keybinds:
   # BASIC UTILITIES (Numpad 1-4)
   # ================================================================
   Numpad1:
-    name: "give_money"
-    description: "Give me 10,000 gold!"
+    name: "spawn_bears"
+    description: "Spawn 5 bears near player"
     commands:
-      - function: "give_item"
-        args: ["currency.gold", 10000]
+      - function: "execute_command"
+        args: ["player.placeatme 00023a8a 5"]
   
   Numpad2:
     name: "god_mode_toggle"

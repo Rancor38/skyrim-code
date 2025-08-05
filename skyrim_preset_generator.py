@@ -121,7 +121,11 @@ class SkyrimPresetGenerator:
                 
         elif function_name == "execute_command":
             command_path = args[0]
-            return self.get_command_by_path(command_path)
+            # Check if it's a direct console command (contains spaces or periods)
+            if " " in command_path or "." in command_path:
+                return command_path  # Return direct console command as-is
+            else:
+                return self.get_command_by_path(command_path)  # Look up in commands.yaml
             
         elif function_name == "set_player_stat":
             stat_name, value = args
@@ -227,11 +231,33 @@ class SkyrimPresetGenerator:
             print(f"❌ Error saving HybridCommander config: {e}")
             return False
     
+    def clear_python_presets(self):
+        """Clear existing Python-generated presets to avoid duplicates"""
+        preset_names = self.hybrid_config["stringList"]["PresetName"]
+        
+        # Find and clear slots with Python_ prefix
+        cleared_count = 0
+        for i, name in enumerate(preset_names):
+            if name.startswith("Python_"):
+                # Clear the preset name
+                self.hybrid_config["stringList"]["PresetName"][i] = ""
+                # Clear the command list for this slot
+                self.hybrid_config["stringList"][str(i)] = [""] * 10
+                cleared_count += 1
+                
+        if cleared_count > 0:
+            print(f"🧹 Cleared {cleared_count} existing Python presets")
+        
+        return cleared_count
+    
     def setup_hybrid_integration(self):
         """Create HybridCommander presets for each preset configuration"""
         if 'keybinds' not in self.keybinds_data:
             print("❌ No keybinds found in config.yaml")
             return
+        
+        # Clear existing Python presets first
+        self.clear_python_presets()
             
         created_presets = 0
         
